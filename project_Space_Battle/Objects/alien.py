@@ -10,7 +10,7 @@ class Alien(Sprite):
         self.screen = screen
         self.game_settings = game_settings
         # Load the ship image and get its rect
-        self.image = pygame.image.load("Files/alien1.jpg")
+        self.image = pygame.image.load("C:/Users/Sunga/Documents/gitHubRepo/pypert_python/project_Space_Battle/Files/alien1.jpg")
         self.rect = self.image.get_rect()  # Get Alien  Rectangular Coordinates
         self.screen_rect = screen.get_rect()  # Get Screen Rectangular Coordinates
 

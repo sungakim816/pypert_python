@@ -1,5 +1,5 @@
 import pygame
-
+import os
 
 class Ship(object):
 
@@ -8,10 +8,10 @@ class Ship(object):
         self.screen = screen
         self.game_options = game_options
         # Load the ship image and get its rect
-        self.image = pygame.image.load("Files/rocket1.jpg")
+        image_path = "C:/Users/Sunga/Documents/gitHubRepo/pypert_python/project_Space_Battle/Files/rocket1.jpg"
+        self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()  # Rectangular Coordinates of the ship
         self.screen_rect = screen.get_rect()  # Rectangular Coordinates of the Screen
-
         # Start each new ship at the bottom center of the screen
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
