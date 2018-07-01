@@ -1,6 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
-
+import os
 
 class Alien(Sprite):
 
@@ -9,8 +9,10 @@ class Alien(Sprite):
         super(Alien, self).__init__()
         self.screen = screen
         self.game_settings = game_settings
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        image_path = os.path.join(BASE_DIR, 'Files\\alien1.jpg')
         # Load the ship image and get its rect
-        self.image = pygame.image.load("C:/Users/Sunga/Documents/gitHubRepo/pypert_python/project_Space_Battle/Files/alien1.jpg")
+        self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()  # Get Alien  Rectangular Coordinates
         self.screen_rect = screen.get_rect()  # Get Screen Rectangular Coordinates
 

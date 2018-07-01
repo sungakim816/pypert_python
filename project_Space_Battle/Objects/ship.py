@@ -7,8 +7,9 @@ class Ship(object):
         """Initialize the ship and set its starting position"""
         self.screen = screen
         self.game_options = game_options
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        image_path = os.path.join(BASE_DIR, 'Files\\rocket1.jpg')
         # Load the ship image and get its rect
-        image_path = "C:/Users/Sunga/Documents/gitHubRepo/pypert_python/project_Space_Battle/Files/rocket1.jpg"
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()  # Rectangular Coordinates of the ship
         self.screen_rect = screen.get_rect()  # Rectangular Coordinates of the Screen
