@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.screen = screen
         self.game_settings = game_settings
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        image_path = os.path.join(BASE_DIR, 'Files\\alien1.jpg')
+        image_path = os.path.join(BASE_DIR, 'Files\\alien.jpg')
         # Load the ship image and get its rect
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()  # Get Alien  Rectangular Coordinates

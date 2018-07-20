@@ -1,14 +1,17 @@
 import pygame
 import os
+from pygame.sprite import Sprite
 
-class Ship(object):
+
+class Ship(Sprite):
 
     def __init__(self, screen, game_options):
         """Initialize the ship and set its starting position"""
+        super(Ship, self).__init__()
         self.screen = screen
         self.game_options = game_options
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        image_path = os.path.join(BASE_DIR, 'Files\\rocket1.jpg')
+        image_path = os.path.join(BASE_DIR, 'Files\\rocket.jpg')
         # Load the ship image and get its rect
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()  # Rectangular Coordinates of the ship
