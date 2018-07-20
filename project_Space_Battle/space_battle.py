@@ -37,6 +37,6 @@ def run_game():
 
         space_event.update_screen(game_settings, stats, score, screen, ship, aliens, bullets, play_button)
 
-
+        
 if __name__ == "__main__":
     run_game()
