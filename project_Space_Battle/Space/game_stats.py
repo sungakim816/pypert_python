@@ -4,7 +4,8 @@ class GameStats(object):
         """Initialize Statistics"""
         self.game_settings = game_settings
         self.game_active = False
-        # High Score Should never be reset 
+        # High Score Should never be reset
+
         self.high_score = 0
         self.reset_stats()
 

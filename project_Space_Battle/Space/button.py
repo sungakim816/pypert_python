@@ -2,8 +2,8 @@ import pygame
 from pygame import sysfont
 
 
-class Button(object):
-    
+class Button:
+
     def __init__(self, game_settings, screen, msg):
         self.screen = screen
         self.game_settings = game_settings
@@ -14,7 +14,7 @@ class Button(object):
         self.text_color = (255, 255, 255)
         self.font = sysfont.SysFont(None, 48)
         # build the button's rect object and center it
-        self.rect = pygame.Rect(0,0, self.width, self.height)
+        self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.center = self.screen_rect.center
         # The button message needs to be prepared only once
         self.prep_msg(msg)

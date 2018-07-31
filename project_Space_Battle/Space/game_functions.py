@@ -55,7 +55,6 @@ def check_play_button(game_settings, screen, stats, score, play_button, ship, al
         ship.center_ship()
     else:
         pygame.mouse.set_visible(True)
-        
 
 
 def update_screen(game_settings, stats, score, screen, ship, aliens, bullets, play_button):
@@ -84,8 +83,9 @@ def update_bullets(game_settings, stats, score, screen, ship, aliens, bullets):
         bullets.empty()
         create_alien_fleet(game_settings, screen, ship, aliens)
         # Start a new Level
-        stats.level +=1
+        stats.level += 1
         score.prep_level()
+
 
 def create_alien_fleet(game_settings, screen, ship, aliens):
     """Create an Entire Alien Fleet"""
@@ -155,6 +155,7 @@ def check_bullet_alien_collisions(game_settings, stats, score, screen, ship, ali
         score.prep_score()
     check_high_score(stats, score)
 
+
 def ship_hit(game_settings, stats, score, screen, ship, aliens, bullets):
     # Decrement Ship Life
     if stats.ship_life > 0:
@@ -180,6 +181,7 @@ def check_aliens_bottom(game_settings, stats, score, screen, ship, aliens, bulle
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             ship_hit(game_settings, stats, score, screen, ship, aliens, bullets)
+
 
 def check_high_score(stats, score):
     """Check to see if there's a new high score"""

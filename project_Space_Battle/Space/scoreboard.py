@@ -1,7 +1,7 @@
-import pygame
 from pygame import sysfont
 from Space.ship import Ship
 from pygame.sprite import Group
+
 
 class Scoreboard(object):
 
@@ -44,7 +44,6 @@ class Scoreboard(object):
         self.level_image_rect.right = self.score_rect.right
         self.level_image_rect.top = self.score_rect.bottom + 10
 
-    
     def prep_ships(self):
         self.ships = Group()
         for ship_number  in range(self.stats.ship_life):
