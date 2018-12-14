@@ -1,6 +1,6 @@
 from datetime import datetime
-import random
-PRINTABLE_LETTER = (
+
+PRINTABLE_CHARACTERS = (
     ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
     'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3',
@@ -36,14 +36,14 @@ def cipher_or_decipher():
             print("You Cancelled the operation..")
             exit()
         else:
-            if encode_or_decode > 2 and encode_or_decode < 1:
+            if encode_or_decode > 2:
                 print("Invalid Option Please Try Again..")
             else:
                 break
     return encode_or_decode
 
 
-def console_or_textFile():
+def console_or_text_file():
     while True:
         try:
             console_or_file = int(input(
@@ -58,30 +58,35 @@ def console_or_textFile():
                 print("Invalid Option Please Try Again..")
             else:
                 break
-
     return console_or_file
 
 
-def cipher(text):
-    text = list(text)
-    for letter in text:
-        for idx in range(len(text)):
-            text[idx] = CODED_VERSION[PRINTABLE_LETTER.index(text[idx])]
-    return "".join(text)
+def cipher(raw_text):
+    no_char = len(raw_text)
+    counter = 0
+    raw_text = list(raw_text)
+    while counter < no_char:
+        for idx in range(no_char):
+            raw_text[idx] = CODED_VERSION[PRINTABLE_CHARACTERS.index(raw_text[idx])]
+        counter = counter + 1
+    return "".join(raw_text)
 
 
-def decipher(text):
-    text = list(text)
-    for letter in text:
-        for idx in range(len(text)):
-            text[idx] = PRINTABLE_LETTER[CODED_VERSION.index(text[idx])]
-    return "".join(text)
+def decipher(secret_text):
+    no_char = len(secret_text)
+    counter = 0
+    secret_text = list(secret_text)
+    while counter < no_char:
+        for idx in range(no_char):
+            secret_text[idx] = PRINTABLE_CHARACTERS[CODED_VERSION.index(secret_text[idx])]
+        counter = counter + 1
+    return "".join(secret_text)
 
 
 if __name__ == "__main__":
     text = ""
     mode = cipher_or_decipher()
-    method = console_or_textFile()
+    method = console_or_text_file()
     if mode == 1:  # cipher the message
         if method == 1:  # console
             text = input('Enter your Message: ')
@@ -97,7 +102,7 @@ if __name__ == "__main__":
                 file_result.write('\n\nCIPHERED MESSAGE, Date: ')
                 file_result.write(str(datetime.now()) + '\n')
                 file_result.write(result.title())
-            print('Result is saved in', file_name)
+            print('Result is Saved in', file_name)
     elif mode == 2:  # decipher the message
         if method == 1:  # console
             text = input('Enter the message: ')
